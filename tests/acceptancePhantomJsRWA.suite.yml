@@ -1,0 +1,39 @@
+# PhantomJS: Headless WebKit scriptable with a JavaScript API.
+# It allows you to run Selenium tests on a server without a GUI installed.
+#
+# Run:
+# $ codecept run acceptancePhantomJsRWA
+
+actor: AcceptancePhantomJsTester
+modules:
+    enabled:
+        - WPDb
+        - WPWebDriver
+        - \Helper\AcceptancePhantomJsRWA
+    config:
+        WPWebDriver:
+            url: '%WP_URL%'
+            browser: phantomjs
+            capabilities:
+                browserName: "chrome"
+                javascriptEnabled: true
+                webStorageEnabled: true
+                nativeEvents: true
+            restart: true # create a new window for each test
+            window_size: 1024x768
+            wait: 2 # Whenever element is required and is not on page, wait for n seconds to find it before fail.
+            port: 4444
+            log_js_errors: true
+            adminUsername: '%ADMIN_USERNAME%'
+            adminPassword: '%ADMIN_PASSWORD%'
+            adminPath: '%WP_ADMIN_PATH%'
+extensions:
+    enabled:
+        - Codeception\Extension\Recorder
+        - Codeception\Extension\RunProcess: #Extension to start and stop server
+            0: phantomjs --webdriver=4444
+            sleep: 5 # wait 5 seconds for processes to boot
+    config:
+        Codeception\Extension\Recorder:
+            delete_successful: true
+            module: WPWebDriver

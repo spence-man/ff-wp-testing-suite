@@ -1,0 +1,40 @@
+# WPWebDriver - a Guzzle based, JavaScript capable web driver;
+# to be used in conjunction with a Selenium server, PhantomJS or any real
+# web browser for acceptance testing requiring JavaScript support
+#
+# Run:
+# $ codecept run acceptanceBrowserRWA
+
+actor: AcceptanceBrowserTester
+modules:
+    enabled:
+        - WPDb
+        - WPWebDriver
+        - \Helper\AcceptanceBrowserRWA
+    config:
+        WPWebDriver:
+            url: '%WP_URL%'
+            window_size: 1024x768
+            browser: chrome
+            capabilities:
+                browserName: "chrome"
+                javascriptEnabled: true
+                webStorageEnabled: true
+                nativeEvents: true
+            port: 9515
+            restart: true
+            wait: 2
+            adminUsername: '%ADMIN_USERNAME%'
+            adminPassword: '%ADMIN_PASSWORD%'
+            adminPath: '%WP_ADMIN_PATH%'
+extensions:
+    enabled:
+        - Codeception\Extension\Recorder
+        - Codeception\Extension\RunProcess: #Extension to start and stop server
+            0: chromedriver --url-base=/wd/hub
+            sleep: 5 # wait 5 seconds for processes to boot
+    config:
+        # Saves a screenshot of each step in acceptance tests and shows them as a slideshow on one HTML page
+        Codeception\Extension\Recorder:
+            delete_successful: true
+            module: WPWebDriver

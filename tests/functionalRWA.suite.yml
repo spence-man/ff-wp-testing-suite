@@ -1,0 +1,11 @@
+# Run:
+# $ codecept run acceptanceRWA
+
+actor: FunctionalTester
+modules:
+    enabled:
+        - WPDb
+        - WPBrowser
+        # - WPFilesystem
+        - Asserts
+        - \Helper\FunctionalRWA

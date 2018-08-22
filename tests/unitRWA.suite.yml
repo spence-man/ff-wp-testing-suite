@@ -1,0 +1,8 @@
+# Run:
+# $ codecept run unitRWA
+
+actor: UnitTester
+modules:
+    enabled:
+        - Asserts
+        - \Helper\UnitRWA

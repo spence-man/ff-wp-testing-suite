@@ -1,0 +1,21 @@
+{
+    "name": "formulafolios/retirement-wealth-academy",
+    "description": "WordPress theme files for Retirement Wealth Academy website.",
+    "type": "project",
+    "license": "proprietary",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {},
+    "repositories":[
+        {
+          "type": "composer",
+          "url": "https://packagist.org"
+        },
+        {
+            "packagist": false
+        }
+      ],
+    "require-dev": {
+        "lucatume/wp-browser": "^2.1"
+    }
+}

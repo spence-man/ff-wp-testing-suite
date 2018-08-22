@@ -1,0 +1,60 @@
+paths:
+    tests: tests
+    output: tests/_output
+    data: tests/_data
+    support: tests/_support
+    envs: tests/_envs
+actor_suffix: Tester
+modules:
+    config:
+        WPDb:
+            dsn: 'mysql:host=%DB_HOST%;dbname=%DB_NAME%'
+            user: '%DB_USER%'
+            password: '%DB_PASSWORD%'
+            dump: 'tests/_data/dump.sql'
+            populate: true #import the dump before the tests
+            cleanup: true #import the dump between tests
+            url: '%WP_URL%'
+            urlReplacement: true #replace the hardcoded dump URL with the one above
+            tablePrefix: '%TABLE_PREFIX%'
+            waitlock: 0
+        WPBrowser:
+            url: '%WP_URL%'
+            adminUsername: '%ADMIN_USERNAME%'
+            adminPassword: '%ADMIN_PASSWORD%'
+            adminPath: '%WP_ADMIN_PATH%'
+        WPFilesystem:
+            wpRootFolder: '%WP_ROOT_FOLDER%'
+            plugins: '/wp-content/plugins'
+            mu-plugins: '/wp-content/mu-plugins'
+            themes: '/wp-content/themes'
+            uploads: '/wp-content/uploads'
+        WPLoader:
+            wpRootFolder: "%WP_ROOT_FOLDER%"
+            dbName: "%TEST_DB_NAME%"
+            dbHost: "%TEST_DB_HOST%"
+            dbUser: "%TEST_DB_USER%"
+            dbPassword: "%TEST_DB_PASSWORD%"
+            tablePrefix: "%TEST_TABLE_PREFIX%"
+            domain: "%WP_DOMAIN%"
+            adminEmail: "%ADMIN_EMAIL%"
+            title: "Test"
+            theme: retirement-wealth-academy
+            plugins: ['']
+            activatePlugins: ['']
+extensions:
+    enabled:
+        - Codeception\Extension\RunFailed
+    commands:
+        - Codeception\Command\GenerateWPUnit
+        - Codeception\Command\GenerateWPRestApi
+        - Codeception\Command\GenerateWPRestController
+        - Codeception\Command\GenerateWPRestPostTypeController
+        - Codeception\Command\GenerateWPAjax
+        - Codeception\Command\GenerateWPCanonical
+        - Codeception\Command\GenerateWPXMLRPC
+        - Codeception\Command\DbSnapshot
+        - tad\Codeception\Command\SearchReplace
+params:
+    - .env
+

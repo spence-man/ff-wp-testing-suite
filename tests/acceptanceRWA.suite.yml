@@ -1,0 +1,15 @@
+# WPBrowser - a PHP based, JavaScript-less and headless browser
+# for acceptance testing not requiring JavaScript support.
+#
+# Run:
+# $ codecept run acceptanceRWA
+#
+# Specific file:
+# $ codecept run acceptanceRWA expectAdminLoginCest.php
+
+actor: AcceptanceTester
+modules:
+    enabled:
+        - WPDb
+        - WPBrowser
+        - \Helper\AcceptanceRWA
