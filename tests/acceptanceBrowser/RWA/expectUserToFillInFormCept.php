@@ -1,5 +1,5 @@
 <?php
-// $ codecept run acceptance expectUserToFillInFormCept.php
+// $ codecept run acceptanceBrowser RWA:expectUserToFillInFormCept
 
 $I = new AcceptanceBrowserTester($scenario);
 $I->amOnPage('/rwa');

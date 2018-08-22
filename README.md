@@ -62,10 +62,12 @@ Setup is based off the [wiki WordPress mulitsite](https://wiki.formulafolios.com
 
 **Run:**
 
-    codecept run acceptanceRWA
-    codecept run acceptanceRWA expectAdminLoginCest.php  # Run a specific file
+    # codecept run [suitename] [sitename]
+      codecept run acceptance RWA
+      codecept run acceptance RWA:expectAdminLoginCest # Run a specific file
+
 
 This command will run the acceptance test for Retirement Wealth Academy.
-Replace `acceptanceRWA` with `acceptanceBrowserRWA`,`acceptancePhantomJsRWA`, `functionalRWA`,`unitRWA`,`wpunitRWA` to run those suites.
+Replace `acceptance` with `acceptanceBrowser`,`acceptancePhantomJs`, `functional`,`unit`,`wpunit` to run those suites.
 
 

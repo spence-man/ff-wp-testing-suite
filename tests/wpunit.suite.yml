@@ -5,4 +5,4 @@ actor: WpunitTester
 modules:
     enabled:
         - WPLoader
-        - \Helper\WpunitRWA
+        - \Helper\Wpunit

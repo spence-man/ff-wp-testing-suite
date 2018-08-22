@@ -9,7 +9,7 @@ modules:
     enabled:
         - WPDb
         - WPWebDriver
-        - \Helper\AcceptancePhantomJsRWA
+        - \Helper\AcceptancePhantomJs
     config:
         WPWebDriver:
             url: '%WP_URL%'

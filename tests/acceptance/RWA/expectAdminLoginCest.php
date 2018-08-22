@@ -1,6 +1,5 @@
-
 <?php
-// $ codecept run acceptance expectAdminLoginCest.php
+// $ codecept run acceptance RWA:expectAdminLoginCest
 
 class expectAdminLoginCest
 {
@@ -18,7 +17,7 @@ class expectAdminLoginCest
         $I->amGoingTo('log in as Admin');
         $I->loginAsAdmin();
         $I->amOnPage("/wp-admin");
-        $I->see("modern publishing experience");
+        $I->see("Welcome to WordPress");
         $I->seeInCurrentUrl('/wp-admin');
     }
 }
