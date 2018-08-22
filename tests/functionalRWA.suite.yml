@@ -1,5 +1,5 @@
 # Run:
-# $ codecept run acceptanceRWA
+# $ codecept run functionalRWA
 
 actor: FunctionalTester
 modules:

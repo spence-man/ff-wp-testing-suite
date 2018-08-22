@@ -16,12 +16,11 @@ Setup is based off the [wiki WordPress mulitsite](https://wiki.formulafolios.com
 
 - **Clone Repo**
 
-       git clone git@github.com:spence-man/ff-wp-testing-suite.git
+      git clone git@github.com:spence-man/ff-wp-testing-suite.git
 
 - **Install Codeception with WordPress**
 
       composer install
-      composer update
       echo "alias codecept=./vendor/bin/codecept" >> ~/.bash_profile
       codecept --version
 
@@ -35,17 +34,21 @@ Setup is based off the [wiki WordPress mulitsite](https://wiki.formulafolios.com
 
 - **Setup test database in MAMP MySQL**
 
-      # /Applications/MAMP/Library/bin/mysql
+      # /Applications/MAMP/Library/bin/mysql -uroot -p
       CREATE DATABASE ffwpcore_test;
-      GRANT ALL PRIVILEGES ON ffwpcore_test.* TO "user"@"localhost" IDENTIFIED BY "password";
+      GRANT ALL PRIVILEGES ON ffwpcore_test.* TO "root"@"localhost" IDENTIFIED BY "root";
 
       FLUSH PRIVILEGES;
       EXIT
 
 - **Create WordPress Dump and move to `/tests/_data`:**
 
-      /Applications/MAMP/Library/bin/mysqldump -u yourUser -p --opt yourdb > dump.sql
+      # Assuming your current database name is ffwpcore
+      /Applications/MAMP/Library/bin/mysqldump -uroot -proot ffwpcore > dump.sql
       mv dump.sql ~/ff-wp-testing-suite/tests/_data/dump.sql
+
+      # Use same dump file & import to test database
+      $ wp-mysql -u username -proot ffwpcore_test < dump.sql
 
 - **Based on your setup, verify and/or modify configuration set in `ff-wp-testing-suite/.env`**
 
