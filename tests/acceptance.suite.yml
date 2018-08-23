@@ -2,14 +2,16 @@
 # for acceptance testing not requiring JavaScript support.
 #
 # Run:
-# $ codecept run acceptanceRWA
+# codecept run acceptance [siteName]
+#
+# codecept run acceptance RWA
 #
 # Specific file:
-# $ codecept run acceptanceRWA expectAdminLoginCest.php
+# $ codecept run acceptance RWA:expectAdminLoginCest
 
 actor: AcceptanceTester
 modules:
     enabled:
         - WPDb
         - WPBrowser
-        - \Helper\AcceptanceRWA
+        - \Helper\Acceptance

@@ -8,4 +8,4 @@ modules:
         - WPBrowser
         # - WPFilesystem
         - Asserts
-        - \Helper\FunctionalRWA
+        - \Helper\Functional

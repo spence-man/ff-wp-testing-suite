@@ -1,5 +1,5 @@
 <?php
-// $ codecept run acceptance expectAdminToAddUserCest.php
+// $ codecept run acceptancePhantomJs RWA:expectAdminToAddUserCest
 
 class expectAdminToAddUserCest
 {

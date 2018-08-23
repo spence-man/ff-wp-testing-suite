@@ -9,7 +9,7 @@ modules:
     enabled:
         - WPDb
         - WPWebDriver
-        - \Helper\AcceptanceBrowserRWA
+        - \Helper\AcceptanceBrowser
     config:
         WPWebDriver:
             url: '%WP_URL%'
