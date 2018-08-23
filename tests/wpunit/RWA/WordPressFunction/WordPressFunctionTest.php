@@ -1,5 +1,5 @@
 <?php
-// codecept run wpunit WordPressFunction/WordPressFunctionTest.php
+// codecept run wpunit RWA:WordPressFunction
 
 namespace WordPressFunction;
 

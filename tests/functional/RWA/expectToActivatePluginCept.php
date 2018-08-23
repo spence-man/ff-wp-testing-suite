@@ -1,5 +1,5 @@
 <?php
-// $ codecept run functional expectToActivatePluginCept.php
+// $ codecept run functional RWA:expectToActivatePluginCept
 
 $I = new FunctionalTester($scenario);
 $I->wantTo('log in as an Admin and activate plugin');

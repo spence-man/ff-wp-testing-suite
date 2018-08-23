@@ -1,6 +1,6 @@
 <?php
 
-// $ codecept run unit ExampleTest.php
+// $ codecept run unit RWA:ExampleTest
 
 class ExampleTest extends \Codeception\Test\Unit
 {

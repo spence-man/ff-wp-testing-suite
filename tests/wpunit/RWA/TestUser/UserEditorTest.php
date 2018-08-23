@@ -1,5 +1,5 @@
 <?php
-// codecept run wpunit TestUser/UserEditorTest.php
+// codecept run wpunit RWA:TestUser
 namespace TestUser;
 
 class UserEditorTest extends \Codeception\TestCase\WPTestCase

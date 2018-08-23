@@ -1,5 +1,5 @@
 <?php
-// $ codecept run acceptance RWA:expectLoginToSucceedCept.php
+// $ codecept run acceptance RWA:expectLoginToSucceedCept
 
 $I = new AcceptanceTester($scenario);
 $I->wantTo('login with a valid username and password');
