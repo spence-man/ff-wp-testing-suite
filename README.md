@@ -34,14 +34,13 @@ Setup is based off the [wiki WordPress mulitsite](https://wiki.formulafolios.com
 
 - **Setup test database in MAMP MySQL**
 
-      # /Applications/MAMP/Library/bin/mysql -uroot -p
+      # /Applications/MAMP/Library/bin/mysql -uroot -proot
       wp-mysql -uroot -proot
       
       CREATE DATABASE ffwpcore_test;
       GRANT ALL PRIVILEGES ON ffwpcore_test.* TO "root"@"localhost" IDENTIFIED BY "root";
-
       FLUSH PRIVILEGES;
-      EXIT
+      EXIT;
 
 - **Create WordPress Dump and move to `/tests/_data`:**
 
@@ -50,7 +49,7 @@ Setup is based off the [wiki WordPress mulitsite](https://wiki.formulafolios.com
       mv dump.sql ~/ff-wp-testing-suite/tests/_data/dump.sql
 
       # Use same dump file & import to test database
-      $ wp-mysql -u username -proot ffwpcore_test < dump.sql
+      $ wp-mysql -uroot -proot ffwpcore_test < ~/ff-wp-testing-suite/tests/_data/dump.sql
 
 - **Based on your setup, verify and/or modify configuration set in `ff-wp-testing-suite/.env`**
 
