@@ -1,5 +1,5 @@
 <?php
-// $ codecept run functional AddPostAsAdminCept.php
+// $ codecept run functional RWA:AddPostAsAdminCept
 
 $I = new FunctionalTester($scenario);
 $I->wantTo("Add a post as an admin");
