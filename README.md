@@ -35,6 +35,8 @@ Setup is based off the [wiki WordPress mulitsite](https://wiki.formulafolios.com
 - **Setup test database in MAMP MySQL**
 
       # /Applications/MAMP/Library/bin/mysql -uroot -p
+      wp-mysql -uroot -proot
+      
       CREATE DATABASE ffwpcore_test;
       GRANT ALL PRIVILEGES ON ffwpcore_test.* TO "root"@"localhost" IDENTIFIED BY "root";
 
